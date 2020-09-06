@@ -20,7 +20,7 @@
 <body>
 
     <header>
-        <nav class="container">
+     <!--    <nav class="container">
             <a class="logo" href="">
                 <img src="/img/logo.svg" alt="" height="50">
             </a>
@@ -86,7 +86,110 @@
                     
                   </div>
             </ul>
-        </nav>
+        </nav> -->
+
+        <section class="navigation">
+          <div class="nav-container">
+            <div class="brand">
+              <a href="#!"> <img class="logo" src="/img/logo.svg" alt="" height="50"></a>
+            </div>
+            <nav>
+              <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+              <ul class="nav-list">
+                <li>
+                  <a href="#!">Lab search</a>
+                  <ul class="nav-dropdown">
+                    <li>
+                      <a href="#!">Electronics & Electrical</a>
+                    </li>
+                    <li>
+                      <a href="#!">Household products & Furniture</a>
+                    </li>
+                    <li>
+                      <a href="#!">Apparel, Textile & Footwear</a>
+                    </li>
+                    <li>
+                      <a href="#">Food Contact Material</a>
+                    </li>
+                    <li>
+                      <a href="#">Personal Care Products & Chemical</a>
+                    </li>
+                    <li>
+                      <a href="#">Food & Beverage</a>
+                    </li>
+                    <li>
+                      <a href="#">Personal Protective Items</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#!">Testing standards</a>
+                  <ul class="nav-dropdown">
+                    <li>
+                      <a href="#">ROHS</a>
+                    </li>
+                    <li>
+                      <a href="#">REACH</a>
+                    </li>
+                    <li>
+                      <a href="#">EMC & LVD</a>
+                    </li>
+                    <li>
+                      <a href="#">FDA, LFGB</a>
+                    </li>
+                    <li>
+                      <a href="#">CPSIA</a>
+                    </li>
+                    <li>
+                      <a href="#">Toy safety</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#!">Certification</a>
+                  <ul class="nav-dropdown">
+                    <li>
+                      <a href="#">CE certification</a>
+                    </li>
+                    <li>
+                      <a href="#">AS/NZ certification</a>
+                    </li>
+                    <li>
+                      <a href="#">UL certification</a>
+                    </li>
+                    <li>
+                      <a href="#">CCC certification</a>
+                    </li>
+                    <li>
+                      <a href="#">INMETRO certification</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#!">About</a>
+                  <ul class="nav-dropdown">
+                    <li>
+                      <a href="#">Blog</a>
+                    </li>
+                    <li>
+                      <a href="#">History</a>
+                    </li>
+                    <li>
+                      <a href="#">Alibaba</a>
+                    </li>
+                    <li>
+                      <a href="#">Careers</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#!">Contact us</a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </section>
     </header>
 
     <div class="container">
@@ -123,9 +226,35 @@
     </div> -->
 
     <script>
-        $('.nav-toggle').on('click', function () {
+/*         $('.nav-toggle').on('click', function () {
             $('#menu').toggleClass('active');
         });
+ */
+
+        (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery);
+
     </script>
 </body>
 
