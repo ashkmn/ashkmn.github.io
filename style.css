@@ -4,6 +4,9 @@
       height: 70px;
       background: #ffffff;
     }
+    h2 {
+      font-weight: 700;
+    }
     .block2 {
       margin-top: 50px;
       /* height: fit-content; */
@@ -43,6 +46,8 @@
     }
     .step h2 {
       font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
     .step p {
       font-size: 15px;
